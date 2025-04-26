@@ -1,1 +1,1 @@
-# SSBPsychPractice
+# SSBPsychSelf

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "username": "NikAdmin",
+      "email": "inikhilthhp@gmail.com",
+      "password": "Nikadmin26@",
+      "isAdmin": true,
+      "lastLogin": "2025-04-26T17:34:04.020Z"
+    },
+    {
+      "username": "NewUserTest",
+      "email": "Kamal@gmail.com",
+      "password": "Kamal123@",
+      "isAdmin": false,
+      "lastLogin": "2025-04-24T08:51:24.712Z"
+    },
+    {
+      "username": "asdasd",
+      "email": "nik123@gmail.com",
+      "password": "Niknew",
+      "isAdmin": false,
+      "lastLogin": "2025-04-24T08:59:59.299Z"
+    }
+  ]
+}
