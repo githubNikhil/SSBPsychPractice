@@ -54,8 +54,8 @@ app.use((req, res, next) => {
   }
 
   // Set the server to listen on the specified port
-  const port = 3000; // You can change this to another port as needed
-  server.listen(port, "localhost", () => {
+  const port = 10000 ; // You can change this to another port as needed
+  server.listen(port, "0.0.0.0", () => {
     log(`Server is running on http://localhost:${port}`);
   });
 })();
