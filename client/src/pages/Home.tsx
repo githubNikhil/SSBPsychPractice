@@ -28,7 +28,7 @@ export default function Home() {
               animation: "fade 2s infinite",
             }}
             >
-            * For best experience please view in landscape mode.
+            * For best experience please view in landscape mode
             </p>
             <style>
             {`

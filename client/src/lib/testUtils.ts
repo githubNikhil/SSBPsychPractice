@@ -5,18 +5,18 @@ import blank from "../../../uploads/blank/white.jpg";
 // Constants for test durations
 export const TEST_DURATIONS = {
   TAT: {
-    DISPLAY_TIME: 3, // 30 seconds per image
-    GAP_TIME: 5, // 4 minutes gap
+    DISPLAY_TIME: 5, // 30 seconds per image
+    GAP_TIME: 3, // 4 minutes gap
     TOTAL_IMAGES: 12, // 11 images + 1 blank slide
-    TOTAL_TIME: 66 * 60, // 66 minutes in seconds
+    TOTAL_TIME: 54 * 60, // 54 minutes in seconds
   },
   WAT: {
-    DISPLAY_TIME: 2, // 15 seconds per word
+    DISPLAY_TIME: 3, // 15 seconds per word
     TOTAL_WORDS: 60,
     TOTAL_TIME: 15 * 60, // 15 minutes in seconds
   },
   SRT: {
-    DISPLAY_TIME: 2, // 30 seconds per scenario
+    DISPLAY_TIME: 3, // 30 seconds per scenario
     TOTAL_SCENARIOS: 60,
     TOTAL_TIME: 30 * 60, // 30 minutes in seconds
   },
