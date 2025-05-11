@@ -50,7 +50,7 @@ export default function TestSelection() {
         
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-primary mb-2">Test Selection</h1>
-          <p className="text-slate-600">Choose a specific assessment or select the full test battery</p>
+          <p className="text-slate-600">Choose a specific assessment or select the full length test</p>
         </div>
 
         <Card className="bg-white rounded-xl shadow-lg overflow-hidden border-0 mb-8">
@@ -146,8 +146,8 @@ export default function TestSelection() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary">Full Length Psych</h3>
-                    <p className="text-sm text-gray-600">Complete test battery</p>
+                    <h3 className="font-semibold text-secondary">Full Length Psych Test</h3>
+                    <p className="text-sm text-gray-600">Combination of all tests in sequence</p>
                   </div>
                 </div>
                 <span className="text-xs text-gray-500 px-3 py-1 bg-white rounded-full">
@@ -155,7 +155,7 @@ export default function TestSelection() {
                 </span>
               </div>
             </div>
-
+{/* 
             <div className="mt-6 text-center">
               <Button 
                 variant="ghost"
@@ -164,7 +164,7 @@ export default function TestSelection() {
               >
                 ← Back to Home
               </Button>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </div>
