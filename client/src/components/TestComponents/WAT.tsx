@@ -145,7 +145,7 @@ export default function WAT() {
           <CardFooter className="p-4 border-t border-gray-200 bg-gray-200 rounded-b-lg">
             <Button
               variant="secondary"
-              className="w-full"
+              className="w-full mt-4 hover:opacity-100 bg-orange-400 hover:bg-orange-500"
               onClick={() => setLocation("/test-selection")}
             >
               Exit Test

@@ -143,7 +143,7 @@ export default function LoginPage() {
                     
                     <Button 
                       type="submit" 
-                      className="w-full bg-secondary text-gray-700 hover:bg-secondary/90 hover:border-secondary"
+                      className="w-full mt-4 hover:opacity-100 bg-orange-400 hover:bg-orange-500"
                       disabled={isLoading}
                     >
                       {isLoading ? "Logging in..." : "Login"}
@@ -227,7 +227,7 @@ export default function LoginPage() {
                     
                     <Button 
                       type="submit" 
-                      className="w-full bg-secondary text-gray-700 hover:bg-secondary/90"
+                      className="w-full mt-4 hover:opacity-100 bg-orange-400 hover:bg-orange-500"
                       disabled={isLoading}
                     >
                       {isLoading ? "Registering..." : "Register"}
@@ -248,11 +248,11 @@ export default function LoginPage() {
           </CardFooter>
         </Card>
         
-        <div className="mt-4 text-center">
+        {/* <div className="mt-4 text-center">
           <Button variant="ghost" onClick={() => navigate("/")} className="text-gray-600">
             Back to Home
           </Button>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

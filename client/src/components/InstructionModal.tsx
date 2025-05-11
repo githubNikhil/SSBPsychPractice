@@ -49,11 +49,12 @@ export default function InstructionModal({
             </div>
           </CardContent>
           <CardFooter className="flex justify-end gap-3 pt-4 pb-5 border-t">
-            <Button variant="outline" onClick={onClose} className="border-gray-200 text-gray-700">
+            <Button variant="outline" onClick={onClose} className="hover:opacity-100 hover:bg-olive-green-200">
               Cancel
             </Button>
             <Button 
-              className="bg-secondary hover:bg-secondary/90 text-grey"
+              // className="bg-secondary hover:bg-secondary/90 text-grey"
+              className="hover:opacity-100 bg-orange-400 hover:bg-orange-500"
               onClick={onStart}
             >
               Start Test

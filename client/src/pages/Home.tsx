@@ -49,13 +49,13 @@ export default function Home() {
           <div className="h-2 bg-gradient-primary"></div>
           <CardContent className="p-8 relative z-10">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-light-accent flex items-center justify-center mb-6">
+              {/* <div className="w-16 h-16 rounded-full bg-light-accent flex items-center justify-center mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
             <path d="M2 17l10 5 10-5"></path>
             <path d="M2 12l10 5 10-5"></path>
           </svg>
-              </div>
+              </div> */}
               
               <h2 className="text-2xl font-semibold text-center mb-4 text-primary">
           Ready to Begin Testing?
