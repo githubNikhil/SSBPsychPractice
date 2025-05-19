@@ -4,11 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import InstructionModal from "@/components/InstructionModal";
+import PrivateRoute from "@/components/PrivateRoute";
 import { TEST_DURATIONS } from "@/lib/testUtils";
 import { Brain, MessageSquare, Sparkles, ListChecks, Layers } from "lucide-react";
+// import { useAuth } from "@/context/AuthContext";
 import Jet_logo from '../../../attached_assets/image_1745054612098.png';
 
-export default function TestSelection() {
+function TestSelection() {
   const [, setLocation] = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalInfo, setModalInfo] = useState({
@@ -177,5 +179,13 @@ export default function TestSelection() {
         content={modalInfo.content}
       />
     </Layout>
+  );
+}
+
+export default function WrappedTestSelection() {
+  return (
+    <PrivateRoute>
+      <TestSelection />
+    </PrivateRoute>
   );
 }
