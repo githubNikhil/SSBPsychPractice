@@ -85,6 +85,7 @@ export default function Home() {
           </CardContent>
         </Card>
       </div>
+      {/* Tabs Section removed: now in Drawer in Layout */}
     </Layout>
   );
 }
