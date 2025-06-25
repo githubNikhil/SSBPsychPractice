@@ -3,14 +3,20 @@ import { createServer, type Server } from "http";
 import path from "path";
 import { storage } from "./storage";
 import { insertTATContentSchema, insertWATContentSchema, insertSRTContentSchema } from "@shared/schema";
-import { z } from "zod";
 import fs from 'fs/promises';
-
-const getRandomItems = (array: any[], count: number) => {
-  const shuffled = [...array].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-};
 import { upload, extractImagesFromPPTX, getRandomTATImageSet, handleUploadErrors } from "./pptHandler";
+
+
+// const getWords = (wordsObj: Record<string, string[]>, count: number): string[] => {
+//   const key = count.toString();
+//   return Array.isArray(wordsObj[key]) ? wordsObj[key] : [];
+// };
+
+
+const getWords = (wordsObj: Record<string, string[]>, key: string): string[] => {
+  return Array.isArray(wordsObj[key]) ? wordsObj[key] : [];
+};
+
 
 // Authentication middleware
 const isAuthenticated = (req: Request, res: Response, next: Function) => {
@@ -213,54 +219,68 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // WAT Content routes
-  app.get("/api/wat", async (_, res) => {
-    try {
-      const watData = await fs.readFile(path.join(process.cwd(), 'InhouseDB/wat_list.json'), 'utf-8');
-      const { words } = JSON.parse(watData);
-      const randomWords = getRandomItems(words, 60);
-      res.json(randomWords.map((word: string) => ({ word, active: true })));
-    } catch (error) {
-      res.status(500).json({ message: "Server error", error: (error as Error).message });
-    }
-  });
+app.get("/api/wat", async (_, res) => {
+  try {
+    const watData = await fs.readFile(path.join(process.cwd(), 'InhouseDB/wat_list.json'), 'utf-8');
+    const words = JSON.parse(watData);
+    
+    // Get the keys from the words object
+    const keys = Object.keys(words);
+    console.log("Available keys:", keys); 
+
+
+    // Generate a random index based on the number of keys available
+    const randomIndex = Math.floor(Math.random() * keys.length);
+    console.log("Random index:", randomIndex);
+    
+    const randomKey = keys[randomIndex]; // Get the random key from the keys array
+    console.log("Random keyh:", randomKey);
+    const listOfWords = getWords(words, randomKey); // Pass the random key as a string
+    
+    res.set('Cache-Control', 'no-store');
+    res.json(listOfWords.map((word: string) => ({ word, active: true })));
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: (error as Error).message });
+  }
+});
   
-  app.post("/api/wat", async (req, res) => {
-    try {
-      const { words } = req.body;
-      if (!Array.isArray(words)) {
-        return res.status(400).json({ message: "Invalid data format" });
-      }
+  // app.post("/api/wat", async (req, res) => {
+  //   try {
+  //     const { words } = req.body;
+  //     if (!Array.isArray(words)) {
+  //       return res.status(400).json({ message: "Invalid data format" });
+  //     }
 
-      // Read existing WAT list
-      const watPath = path.join(process.cwd(), 'InhouseDB/wat_list.json');
-      let watData = { words: [] };
-      try {
-        const existingData = await fs.readFile(watPath, 'utf-8');
-        watData = JSON.parse(existingData);
-      } catch (error) {
-        // File doesn't exist, use default empty array
-      }
+  //     // Read existing WAT list
+  //     const watPath = path.join(process.cwd(), 'InhouseDB/wat_list.json');
+  //     let watData = { words: [] };
+  //     try {
+  //       const existingData = await fs.readFile(watPath, 'utf-8');
+  //       watData = JSON.parse(existingData);
+  //     } catch (error) {
+  //       // File doesn't exist, use default empty array
+  //     }
 
-      // Add new words
-      watData.words = [...new Set([...watData.words, ...words])];
+  //     // Add new words
+  //     watData.words = [...new Set([...watData.words, ...words])];
       
-      // Save back to file
-      await fs.writeFile(watPath, JSON.stringify(watData, null, 2));
+  //     // Save back to file
+  //     await fs.writeFile(watPath, JSON.stringify(watData, null, 2));
       
-      return res.status(201).json({ success: true, message: "Words added successfully" });
+  //     return res.status(201).json({ success: true, message: "Words added successfully" });
       
-      // If it's a single word
-      const parsedBody = insertWATContentSchema.safeParse(req.body);
-      if (!parsedBody.success) {
-        return res.status(400).json({ message: "Invalid data", errors: parsedBody.error.format() });
-      }
+  //     // If it's a single word
+  //     const parsedBody = insertWATContentSchema.safeParse(req.body);
+  //     if (!parsedBody.success) {
+  //       return res.status(400).json({ message: "Invalid data", errors: parsedBody.error.format() });
+  //     }
       
-      const content = await storage.createWATContent(parsedBody.data);
-      res.status(201).json(content);
-    } catch (error) {
-      res.status(500).json({ message: "Server error", error: (error as Error).message });
-    }
-  });
+  //     const content = await storage.createWATContent(parsedBody.data);
+  //     res.status(201).json(content);
+  //   } catch (error) {
+  //     res.status(500).json({ message: "Server error", error: (error as Error).message });
+  //   }
+  // });
   
   app.delete("/api/wat/:id", isAuthenticated, async (req, res) => {
     try {
@@ -284,9 +304,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/srt", async (_, res) => {
     try {
       const srtData = await fs.readFile(path.join(process.cwd(), 'InhouseDB/srt_list.json'), 'utf-8');
-      const { scenarios } = JSON.parse(srtData);
-      const randomScenarios = getRandomItems(scenarios, 60);
-      res.json(randomScenarios.map((scenario: string) => ({ scenario, active: true })));
+      const scenarios = JSON.parse(srtData);
+
+      // Get the keys from the words object
+    const keys = Object.keys(scenarios);
+    console.log("Available keys:", keys); 
+
+
+    // Generate a random index based on the number of keys available
+    const randomIndex = Math.floor(Math.random() * keys.length);
+    console.log("Random index:", randomIndex);
+    
+    const randomKey = keys[randomIndex]; // Get the random key from the keys array
+    console.log("Random keyh:", randomKey);
+    const randomScenarios = getWords(scenarios, randomKey);
+
+    res.json(randomScenarios.map((scenario: string) => ({ scenario, active: true })));
     } catch (error) {
       res.status(500).json({ message: "Server error", error: (error as Error).message });
     }

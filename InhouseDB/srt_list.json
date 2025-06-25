@@ -1,5 +1,5 @@
 {
-  "scenarios": [
+  "1": [
     "His sister’s marriage is fixed. His relative refused to give loan/money. He…",
     "Marriage of your sister is fixed. He is not granted leave due to Administrative Inspection. He…",
     "Bharat Bandh is likely to be declared while you are on leave. Your leave is to be finished after two days of commencement of Bandh. He…",
@@ -45,7 +45,8 @@
     "He had a minor scooter accident on his way to office in which his scooter got slightly damaged. He…",
     "He has lost his way in the jungle. He…",
     "While travelling in a train, he found that his ticket is lost. He…",
-    "To check the growth of population, what will he suggest?\n Electric light of his neighbor has gone off. He…",
+    "To check the growth of population, what will he suggest?",
+    "Electric light of his neighbor has gone off. He…",
     "He is travelling in a bus which suddenly caught fire. He…",
     "He has come to his home after meeting a friend. Suddenly he has been attacked by some miscreants with lathi. He…",
     "He is passing by a lake, he notices a boy drowning in the water and he does not know swimming. He…",
@@ -58,7 +59,10 @@
     "He was the captain of the football team and the performance of the team was not up to the mark. He…",
     "It was a desert area and he lost his way being away from the team members. He…",
     "He wants to join the Indian Army whereas his father wants him to become a software professional. He…",
-    "His sister’s marriage is fixed but she is not happy to marry the person not being of her choosing. He…",
+    "His sister’s marriage is fixed but she is not happy to marry the person not being of her choosing. He…"
+  ],
+  "2": [
+    "He was traveling to his SSB centre, and just before reaching the station, he found that his suitcase is lost. He..",
     "He is the house captain and is required to make arrangements for an entertainment programme in the school. He…",
     "While traveling by train he went to toilet. On his return to his seat he found his briefcase missing. He..",
     "He received conflicting orders from his two superior officers. He..",
@@ -112,12 +116,14 @@
     "His father had borrowed some money for his higher studies which he could not pay back. So He..",
     "While passing through a mountainous track he was challenged by two persons with weapons in their hands. He..",
     "He had to appear in an exam. On reaching the city, he noticed that curfew had been clamped. He..",
-    "He was captain of basketball team and his team was about to loose in the final. He..",
+    "He was captain of basketball team and his team was about to lose in the final. He..",
     "After marriage, his in-laws forced him to leave the job. He..",
     "His parents often irritated him with their orthodox ideas about the role of women in a society. He..",
     "At the time of interview, he found that his certificates were missing. He..",
     "When he observed that his friend was having some suspicion on him. He..",
-    "He had already decided to vote for a particular candidate whereas his friends wanted his commitment for the other candidate. He..",
+    "He had already decided to vote for a particular candidate whereas his friends wanted his commitment for the other candidate. He.."
+  ],
+  "3": [
     "His colleagues advised him to be tactful with his boss. He..",
     "He happened to be present at a bus stop when a child who was with his mother was hit by a speeding motorbike and was injured seriously. He..",
     "Exams were coming near and he fell seriously ill. He..",
@@ -149,7 +155,7 @@
     "He was an officer posted at the border & suddenly shelling started from the other side. He..",
     "He was at unknown city and lost his purse. And was in dire Need of Money. He..",
     "His brother wanted to get admission in a medical college but his marks fell short by 1 % for admission. He..",
-    "He had to go to a city with cash for work but the way was dangerous due t presence of dacoits. He..",
+    "He had to go to a city with cash for work but the way was dangerous due to presence of dacoits. He..",
     "He was traveling by a train & suddenly a person snatched purse from a lady & jumped out of the train. He..",
     "He was going to sign a contract. Suddenly he got news that one of his friend who had helped him once met with an accident and was in ICU. He..",
     "He had boarded a wrong train and came to know only when he was asked to pay money to TT. He..",
@@ -177,8 +183,6 @@
     "During a trekking trip, he was left alone in the jungle. He..",
     "He was weak in studies, and knew that he could not do well in his education. He..",
     "He was going for SSB and on the way he saw a person seriously injured and nobody was there to help him. He..",
-    "His brother was facing charges for the murder which he really committed. He..",
-    "He was crossing a heavily flooded nala in his boat and suddenly lost his control. He..",
-    "He was traveling to his SSB centre, and just before reaching the station, he found that his suitcase is lost. He.."
+    "His brother was facing charges for the murder which he really committed. He.."
   ]
 }
